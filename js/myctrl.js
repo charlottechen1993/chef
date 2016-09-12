@@ -9,19 +9,19 @@ app.controller("myCtrl", function($scope) {
             "Image": "bibimbap.jpg",
             "Count": 2
         },{
-            "Title": "Chinese Fried Rice",
-            "Description": "Good for lunch and dinner",
-            "Primary-Type": "Asian",
-            "Secondary-Type": "Rice",
-            "Image": "fried-rice.jpg",
-            "Count": 4
-        },{
             "Title": "Classic burger",
             "Description": "Very rich in flavor",
             "Primary-Type": "American",
             "Secondary-Type": "Burgers",
             "Image": "burger.jpeg",
             "Count": 3
+        },{
+            "Title": "Chinese Fried Rice",
+            "Description": "Good for lunch and dinner",
+            "Primary-Type": "Asian",
+            "Secondary-Type": "Rice",
+            "Image": "fried-rice.jpg",
+            "Count": 4
         }
     ]
 });
