@@ -20,7 +20,12 @@ app.controller("recipesCtrl", function($scope) {
             Primary: "Asian",
             Secondary: "Rice",
             Image: "fried-rice.jpg",
-            Count: 4
+            Count: 1
         }
     ]
+    // change ordering
+    $scope.orderProp = 'Count';
+    $scope.myFunc = function(value){
+        $scope.orderProp = value;
+    }
 });

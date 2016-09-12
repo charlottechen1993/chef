@@ -13,7 +13,7 @@
 </head>
 
 <body ng-app="myApp" ng-controller="recipesCtrl">
-    <nav>
+    <nav style="z-index: 100">
         <div class="nav-wrapper"> <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="create.html">Create</a></li>
@@ -22,26 +22,29 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="row" style="margin-top: 30px">
-            <a class='dropdown-button btn' href='#' data-activates='sort-dropdown'>Sort By</a>
-            <ul id='sort-dropdown' class='dropdown-content' ng-model="orderProp">
-                <li value="Title">Title</li>
-                <li value="Count">Frequency</li>
-            </ul>
-        </div>
-        <div class="row" style="margin-top: 30px">
-            <div class="col s6 m4 l3" ng-repeat="entry in recipes | orderBy: orderProp">
-                <div class="card">
-                    <div class="card-image"> <img ng-src="images/{{entry.Image}}"> <span class="card-title">{{entry.Title}}</span> </div>
-                    <div class="card-content">
-                        <p><strong>Description: </strong>{{entry.Description}}</p>
-                        <p><strong>Frequency: </strong>{{entry.Count}}</p>
+    
+    <main>
+        <div class="container">
+            <div class="row" style="margin-top: 30px">
+                <a class='dropdown-button btn' data-activates='sort-dropdown'>Sort By</a>
+                <ul id='sort-dropdown' class='dropdown-content' ng-model="orderProp">
+                    <li value="Title" ng-click="myFunc('Title')">Title</li>
+                    <li value="Count" ng-click="myFunc('Count')">Frequency</li>
+                </ul>
+            </div>
+            <div class="row" style="margin-top: 30px">
+                <div class="col s6 m4 l3" ng-repeat="entry in recipes | orderBy: orderProp">
+                    <div class="card">
+                        <div class="card-image"> <img class="recipe-photo" ng-src="images/{{entry.Image}}"> <span class="card-title">{{entry.Title}}</span> </div>
+                        <div class="card-content">
+                            <p><strong>Description: </strong>{{entry.Description}}</p>
+                            <p><strong>Frequency: </strong>{{entry.Count}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     
     <!--Import jQuery before materialize.js-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
