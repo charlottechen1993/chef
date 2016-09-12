@@ -11,7 +11,7 @@
     <title>CHEF</title>
 </head>
 
-<body ng-app="myApp" ng-controller="recipesCtrl">
+<body ng-app="myApp" ng-controller="editItemCtrl">
     <nav>
         <div class="nav-wrapper"> <a href="#" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -23,15 +23,27 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col s6 m4 l3">
-                <div class="card" ng-repeat="entry in recipes">
-                    <div class="card-image"> <img src="images/bibimbap.jpg"> <span class="card-title">{{entry.Title}}</span> </div>
-                    <div class="card-content">
-                        <p>{{entry.Description}}</p>
-                    </div>
-                    <div class="card-action"> <a href="#">This is a link</a></div>
+            <form class="col s12">
+                <div class="row">
+                    <h3 class="header center orange-text">New Recipe</h3>
                 </div>
-            </div>
+                <div class="row">
+                  <div class="col m2 l3"></div>
+                  <div class="input-field col s12 m8 l6">
+                    <input id="recipe_in" type="text">
+                    <label for="recipe_in">Recipe</label>
+                  </div>
+                  <div class="col m2 l3"></div>
+                </div>
+                <div class="row">
+                  <div class="col m2 l3"></div>  
+                  <div class="input-field col s12 m8 l6">
+                    <textarea id="desc_in" class="materialize-textarea" length="120"></textarea>
+                    <label for="desc_in">Description</label>
+                  </div>
+                  <div class="col m2 l3"></div>
+                </div>
+            </form>
         </div>
     </div>
     
@@ -39,7 +51,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/myctrl.js"></script>
+    <script type="text/javascript" src="js/editCtrl.js"></script>
 </body>
 
 </html>
