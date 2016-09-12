@@ -1,5 +1,8 @@
-.card .card-content{
-    overflow: hidden !important;
-    height: 100px !important;
+.card-img-top{
+    height: auto;
+    width: 100%;
 }
 
+.navbar-dark{
+    border-radius: 0;
+}
