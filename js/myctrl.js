@@ -23,6 +23,7 @@ app.controller("recipesCtrl", function($scope) {
             Count: 1
         }
     ]
+    
     // change ordering
     $scope.orderProp = 'Count';
     $scope.myFunc = function(value){

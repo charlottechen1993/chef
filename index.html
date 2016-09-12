@@ -25,19 +25,36 @@
     </nav>
     <main>
         <div class="container-fluid" style="margin-top: 30px;">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort By
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ng-model="orderProp">
-                    <a class="dropdown-item" value="Title" ng-click="myFunc('Title')">Title</a>
-                    <a class="dropdown-item" value="Count" ng-click="myFunc('Count')">Frequency</a>
+            <div class="row">
+                <!-- Search Bar -->
+                <div class="col-sm-4">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="search-recipe"><strong>Search: </strong></label>
+                            <input type="text" class="form-control" id="search-recipe" ng-model="searchText">
+                        </div>
+                    </form>
+                </div>
+                <!-- Sort -->
+                <div class="col-sm-4">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="sort-recipt"><strong>Sort by: </strong></label>
+                            <select class="form-control" id="sort-recipe" ng-model="orderProp">
+                                <option value="Title" ng-click="myFunc('Title')">Title</option>
+                                <option value="Count" ng-click="myFunc('Count')">Frequency</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <!-- Recipe Cards -->
             <div class="row" style="margin-top: 30px">
-                <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="entry in recipes | orderBy: orderProp">
+                <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="entry in recipes | orderBy: orderProp | filter: searchText">
                     <div class="card">
-                        <img class="card-img-top" ng-src="images/{{entry.Image}}" alt="Card image cap">
+                        <div class="img-crop">
+                            <img class="card-img-top" ng-src="images/{{entry.Image}}" alt="Card image cap">
+                        </div>
                         <div class="card-block">
                             <h4 class="card-title">{{entry.Title}}</h4>
                             <p class="card-text"><strong>Description: </strong>{{entry.Description}}</p>
@@ -48,6 +65,7 @@
             </div>
         </div>
     </main>
+    
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
     <!-- Tether -->
