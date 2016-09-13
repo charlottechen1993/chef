@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/style.css"> 
     <link type="text/css" rel="stylesheet" href="css/navbar-fixed-side.css"> 
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
-
-<body ng-app="myApp" ng-controller="recipesCtrl">
+<body ng-app="myApp" ng-controller="primaryCtrl" class="home-body">
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-inverse">
         <div class="nav navbar-nav">
@@ -24,62 +24,20 @@
             <a class="nav-item nav-link" href="#">About</a>
         </div>
     </nav>
-    
     <main>
-        <div class="container-fluid" ng-controller="secondaryCtrl">
+        <div class="container-fluid">
+            <!-- Recipe Cards -->
             <div class="row">
-                <div class="col-sm-2 col-sm-2-side-nav">
-                    <div class="side-nav">
-                        <ul class="side-nav-list" >
-                            <li class="side-nav-list-item" value="secondTitle" ng-repeat="type in secondType">
-                                {{type.secondTitle}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-10" style="margin-top: 30px;">
-                    <div class="row">
-                        <!-- Search Bar -->
-                        <div class="col-sm-4">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="search-recipe"><strong>Search: </strong></label>
-                                    <input type="text" class="form-control" id="search-recipe" ng-model="searchText">
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Sort -->
-                        <div class="col-sm-4">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label for="sort-recipt"><strong>Sort by: </strong></label>
-                                    <select class="form-control" id="sort-recipe" ng-model="orderProp">
-                                        <option value="Title" ng-click="myFunc('Title')">Title</option>
-                                        <option value="Count" ng-click="myFunc('Count')">Frequency</option>
-                                        <option value="LastCooked" ng-click="myFunc('LastCooked')">Recently Cooked</option>
-                                    </select>
-                                </div>
-                            </form>
+                <div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="type in firstType">
+                    <div class="primary-type">
+                        <img src="images/{{type.Image}}" class="primary-img">
+                        <div class="list">
+                            
                         </div>
                     </div>
-                    <!-- Recipe Cards -->
-                    <div class="row" style="margin-top: 30px">
-                        <div class="col-sm-6 col-md-4 col-lg-3" ng-repeat="entry in recipes | orderBy: orderProp | filter: searchText">
-                            <div class="card">
-                                <div class="img-crop">
-                                    <img class="card-img-top" ng-src="images/{{entry.Image}}" alt="Card image cap">
-                                </div>
-                                <div class="card-block">
-                                    <h4 class="card-title">{{entry.Title}}</h4>
-                                    <p class="card-text"><strong>Frequency: </strong>{{entry.Count}}</p>
-                                    <p class="card-text"><strong>Last Cooked: </strong>{{entry.LastCooked}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
-            
         </div>
     </main>
     
@@ -95,7 +53,7 @@
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/myctrl.js"></script>
     <script type="text/javascript" src="js/editCtrl.js"></script>
-    <script type="text/javascript" src="js/secondary.js"></script>
+    <script type="text/javascript" src="js/secondaryCtrl.js"></script>
+    <script type="text/javascript" src="js/primaryCtrl.js"></script>
 </body>
-
 </html>

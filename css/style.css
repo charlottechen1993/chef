@@ -2,6 +2,71 @@ body{
     background: #EFEBE9;
 }
 
+.home-body{
+    background: black;
+}
+
+/* ==================== */
+/* ==== index.html ==== */
+/* ==================== */
+.home-body .col-sm-12, .col-md-4, .col-lg-4{
+    padding: 0 !important;
+}
+
+.primary-type{
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.primary-img{
+    height: 100%;
+    width: auto;
+    opacity: 0.6
+}
+
+.primary-type:after, .primary-type:before {
+    position:absolute;
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.primary-type:after {
+    content:'\A';
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+}
+.primary-type:before {
+    width:100%;
+    color:#fff;
+    z-index:1;
+    bottom:0;
+    padding:4px 10px;
+    text-align:center;
+    background:red;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+.primary-type:hover:after, .primary-type:hover:before {
+    opacity:1;
+}
+
+/*
+.primary-list{
+    z-index: 100;
+}
+*/
+
+/* ==================== */
+/* ==== recipe.html === */
+/* ==================== */
+
 .navbar-dark{
     background-color: #795548 !important;
 }
@@ -65,7 +130,7 @@ body{
 }
 
 .card-block{
-    height: 170px;
+    height: 120px;
     overflow: scroll;
 }
 

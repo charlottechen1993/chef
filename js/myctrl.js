@@ -3,15 +3,15 @@ app.controller("recipesCtrl", function($scope) {
         {
             Title: "Bibimbap",
             Description: "This is very tasty",
-            Primary: "Dishes",
-            SecondTitle: "Korean",
+            PrimaryTitle: "Dishes",
+            SecondTitle: ["Korean","Japanese"],
             Image: "bibimbap.jpg",
             Count: 2,
             LastCooked: "2015-08-10"
         },{
             Title: "Classic burger",
             Description: "Very rich in flavor",
-            Primary: "Dishes",
+            PrimaryTitle: "Dishes",
             SecondTitle: "American",
             Image: "burger.jpeg",
             Count: 8,
@@ -19,7 +19,7 @@ app.controller("recipesCtrl", function($scope) {
         },{
             Title: "Chinese Fried Rice",
             Description: "Good for lunch and dinner",
-            Primary: "Dishes",
+            PrimaryTitle: "Dishes",
             SecondTitle: "Chinese",
             Image: "fried-rice.jpg",
             Count: 1,
@@ -27,7 +27,7 @@ app.controller("recipesCtrl", function($scope) {
         },{
             Title: "Chinese Fried Rice",
             Description: "Good for lunch and dinner",
-            Primary: "Dishes",
+            PrimaryTitle: "Dishes",
             SecondTitle: "Chinese",
             Image: "fried-rice.jpg",
             Count: 1,
