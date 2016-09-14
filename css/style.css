@@ -9,7 +9,7 @@ body{
 /* ==================== */
 /* ==== index.html ==== */
 /* ==================== */
-.home-body .col-sm-12, .col-md-4, .col-lg-4{
+.home-body .col-sm-12{
     padding: 0 !important;
 }
 
@@ -29,20 +29,20 @@ body{
     opacity: 0.6
 }
 
-.primary-type:after, .primary-type:before {
+.primary-combine:after, .primary-combine:before {
     position:absolute;
     opacity:0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
 }
 
-.primary-type:after {
+.primary-combine:after {
     content:'\A';
     width:100%; height:100%;
     top:0; left:0;
     background:rgba(0,0,0,0.6);
 }
-.primary-type:before {
+.primary-combine:before{
     width:100%;
     color:#fff;
     z-index:1;
@@ -53,22 +53,35 @@ body{
     box-sizing:border-box;
     -moz-box-sizing:border-box;
 }
-.primary-type:hover:after, .primary-type:hover:before {
+.primary-combine:hover:after, 
+.primary-combine:hover:before{
     opacity:1;
+    cursor: pointer;
 }
 
-/*
 .primary-list{
     z-index: 100;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    text-align: center;
 }
-*/
+
+.primary-list:hover{
+    cursor: pointer;
+}
+
+.subcat{
+    width: 100%;
+}
 
 /* ==================== */
 /* ==== recipe.html === */
 /* ==================== */
 
 .navbar-dark{
-    background-color: #795548 !important;
+    background-color: black !important;
 }
 
 .side-nav{

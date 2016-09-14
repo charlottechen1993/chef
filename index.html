@@ -29,13 +29,17 @@
             <!-- Recipe Cards -->
             <div class="row">
                 <div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="type in firstType">
-                    <div class="primary-type">
-                        <img src="images/{{type.Image}}" class="primary-img">
-                        <div class="list">
-                            
+                    <div class="primary-combine" ng-mouseover="pullCategories(type.primaryTitle)">
+                        <div class="primary-type">
+                            <img src="images/{{type.Image}}" class="primary-img">
+                        </div>
+                        <div class="primary-list">
+                            <h3 class="primary-title">{{type.primaryTitle}}</h3>
+                            <div ng-repeat = "subcat in type.Categories" class="subcat">
+                                <p>{{subcat}}</p>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -55,5 +59,6 @@
     <script type="text/javascript" src="js/editCtrl.js"></script>
     <script type="text/javascript" src="js/secondaryCtrl.js"></script>
     <script type="text/javascript" src="js/primaryCtrl.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
