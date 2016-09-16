@@ -2,43 +2,42 @@
 <html>
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>CHEF</title>
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/style.css"> 
+    <link type="text/css" rel="stylesheet" href="css/navbar-fixed-side.css"> 
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
-
-<body ng-app="myApp" ng-controller="recipesCtrl">
-    <nav style="z-index: 100">
-        <div class="nav-wrapper"> <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="create.html">Create</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
+<body ng-app="myApp" ng-controller="primaryCtrl" class="home-body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-inverse">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link" href="#">About</a>
         </div>
     </nav>
-    
     <main>
-        <div class="container">
-            <div class="row" style="margin-top: 30px">
-                <a class='dropdown-button btn' data-activates='sort-dropdown'>Sort By</a>
-                <ul id='sort-dropdown' class='dropdown-content' ng-model="orderProp">
-                    <li value="Title" ng-click="myFunc('Title')">Title</li>
-                    <li value="Count" ng-click="myFunc('Count')">Frequency</li>
-                </ul>
-            </div>
-            <div class="row" style="margin-top: 30px">
-                <div class="col s6 m4 l3" ng-repeat="entry in recipes | orderBy: orderProp">
-                    <div class="card">
-                        <div class="card-image"> <img class="recipe-photo" ng-src="images/{{entry.Image}}"> <span class="card-title">{{entry.Title}}</span> </div>
-                        <div class="card-content">
-                            <p><strong>Description: </strong>{{entry.Description}}</p>
-                            <p><strong>Frequency: </strong>{{entry.Count}}</p>
+        <div class="container-fluid">
+            <!-- Recipe Cards -->
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4" ng-repeat="type in firstType">
+                    <div class="primary-combine" ng-mouseover="pullCategories(type.primaryTitle)">
+                        <div class="primary-type">
+                            <img src="images/{{type.Image}}" class="primary-img">
+                        </div>
+                        <div class="primary-list">
+                            <h3 class="primary-title">{{type.primaryTitle}}</h3>
+                            <div ng-repeat = "subcat in type.Categories" class="subcat">
+                                <p>{{subcat}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,13 +45,20 @@
         </div>
     </main>
     
-    <!--Import jQuery before materialize.js-->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <!-- Tether -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <!-- BootstrapJS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Custom JS -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/myctrl.js"></script>
     <script type="text/javascript" src="js/editCtrl.js"></script>
+    <script type="text/javascript" src="js/secondaryCtrl.js"></script>
+    <script type="text/javascript" src="js/primaryCtrl.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
-
 </html>
