@@ -24,13 +24,20 @@
     <div class="container-fluid">
         <div class="row">
             <form class="col s12">
-                <div class="row">
+                       <label>Materialize Disabled</label><br/>
+                      <select >
+                        <option value="">Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                      </select>
+<!--                 <div class="row">
                     <h3 class="header center orange-text">New Recipe</h3>
                 </div>
                 <div class="row">
                   <div class="col m2 l3"></div>
                   <div class="input-field col s12 m8 l6">
-                    <input id="recipe_in" type="text">
+                    <input id="recipe_in" type="text" ng-model="recipe.name">
                     <label for="recipe_in">Recipe</label>
                   </div>
                   <div class="col m2 l3"></div>
@@ -38,11 +45,19 @@
                 <div class="row">
                   <div class="col m2 l3"></div>  
                   <div class="input-field col s12 m8 l6">
-                    <textarea id="desc_in" class="materialize-textarea" length="120"></textarea>
+                    <textarea id="desc_in" ng-model="recipe.description" class="materialize-textarea" length="120"></textarea>
                     <label for="desc_in">Description</label>
                   </div>
                   <div class="col m2 l3"></div>
                 </div>
+                 <div class="row">
+                  <div class="col m2 l3"></div>  
+                  <div class="col s12 m8 l6">
+              
+
+                  </div>
+                  <div class="col m2 l3"></div>
+                </div> -->
             </form>
         </div>
     </div>
